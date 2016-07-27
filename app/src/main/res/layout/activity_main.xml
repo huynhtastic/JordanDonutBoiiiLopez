@@ -4,76 +4,149 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.example.android.justjava.MainActivity">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
                 android:text="Glazed Donuts"
-                android:textSize="20sp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Regular Glazed" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chocolate Glazed" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pink Glazed" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Caramel Glazed" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true">
+                android:textSize="25sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
                 android:text="Qty:"
-                android:textSize="20sp"/>
+                android:textSize="25sp" />
 
-            <LinearLayout
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:text="Regular Glazed"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20dp"
+                android:textColor="#000000"/>
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_keyboard_arrow_left_black_24dp"/>
+            <ImageView
+                android:id="@+id/right_reg_glazed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:onClick="incrementRegGlazed"/>
 
-            </LinearLayout>
+            <TextView
+                android:id="@+id/qty_reg_glazed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_toLeftOf="@id/right_reg_glazed"/>
+
+            <ImageView
+                android:id="@+id/left_reg_glazed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/qty_reg_glazed"
+                android:onClick="decrementRegGlazed" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chocolate Glazed"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20dp"
+                android:textColor="#000000"/>
+
+            <ImageView
+                android:id="@+id/right_choc_glazed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:id="@+id/qty_choc_glazed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_toLeftOf="@id/right_choc_glazed"/>
+
+            <ImageView
+                android:id="@+id/left_choc_glazed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/qty_choc_glazed" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Quantity: " />
+
+            <TextView
+                android:id="@+id/total_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
 
         </LinearLayout>
 
-    </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price: $0.00" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"/>
+
+    </LinearLayout>
 
 </ScrollView>
